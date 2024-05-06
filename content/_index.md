@@ -1,4 +1,2 @@
 +++
-render = true
-template = "index"
 +++
