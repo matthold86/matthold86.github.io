@@ -1,6 +1,6 @@
 # Basic site settings
 base_url = "https://matthold86.github.io/"
-title = "Your Personal Website"
+title = "Matthew Holden"
 default_language = "en"
 description = "Personal Portfolio and Website."
 

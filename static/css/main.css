@@ -83,7 +83,7 @@ input, select, textarea {
 	}
 
 	body {
-		background: #f0f4f4;
+		background: #5ecccc;
 		color: #5b5b5b;
 		font-size: 15pt;
 		line-height: 1.85em;
@@ -2176,15 +2176,24 @@ input, select, textarea {
 
 	#header {
 		position: relative;
-		background-image: url("../../images/header.jpg");
-		background-size: cover;
-		background-position: center center;
-		background-attachment: fixed;
-		color: #fff;
+		color: #f9f8f8;
 		text-align: center;
 		padding: 7.5em 0 2em 0;
 		cursor: default;
 	}
+		#header .background-image {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-image: url("../../img/tetons2.jpg");
+			background-size: cover;
+			background-position: center center;
+			background-attachment: fixed;
+			filter: brightness(50%); /* Adjust brightness here */
+			z-index: -1; /*Ensure the image stays behind other content */
+		}
 
 		#header:before {
 			content: '';
@@ -2220,7 +2229,7 @@ input, select, textarea {
 				color: inherit;
 			}
 
-		#header .button {
+		#header.button {
 			display: inline-block;
 			border-radius: 100%;
 			width: 4.5em;
