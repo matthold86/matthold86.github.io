@@ -83,7 +83,7 @@ input, select, textarea {
 	}
 
 	body {
-		background: #5ecccc;
+		background: #c6c0c0;
 		color: #5b5b5b;
 		font-size: 15pt;
 		line-height: 1.85em;
@@ -2110,9 +2110,8 @@ input, select, textarea {
 
 	.icon {
 		text-decoration: none;
-		text-decoration: none;
+		position: relative;
 	}
-
 		.icon:before {
 			-moz-osx-font-smoothing: grayscale;
 			-webkit-font-smoothing: antialiased;
@@ -2146,7 +2145,7 @@ input, select, textarea {
 		.icon.circled {
 			position: relative;
 			display: inline-block;
-			background: #2b252c;
+			background: #484648;
 			color: #fff;
 			border-radius: 100%;
 			width: 3em;
@@ -2155,10 +2154,23 @@ input, select, textarea {
 			text-align: center;
 			font-size: 1.25em;
 		}
+		.icon.featured {
+			cursor: default;
+			display: inline-block;
+			margin: 0 0 1.5em 0;
+			opacity: 0.35;
+			text-align: center;
+		}
+
+			.icon.featured:before {
+				font-size: 5em;
+				line-height: 1em;
+			}
 
 			header .icon.circled {
 				margin: 0 0 2em 0;
 			}
+		
 
 /* Wrapper */
 
