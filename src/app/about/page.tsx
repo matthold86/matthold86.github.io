@@ -40,10 +40,10 @@ export default function AboutPage() {
               <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Machine Learning</h3>
                 <ul className="space-y-2 text-gray-600 dark:text-gray-300">
-                  <li>• Deep Learning & Neural Networks</li>
-                  <li>• Natural Language Processing</li>
-                  <li>• Computer Vision</li>
-                  <li>• Model Deployment & MLOps</li>
+                  <li>• Deep Learning & Neural Networks </li>
+                  <li>• Natural Language Processin </li>
+                  <li>• Computer Vision </li>
+                  <li>• Model Deployment & MLOps </li>
                 </ul>
               </div>
               <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
