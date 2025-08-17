@@ -21,11 +21,11 @@ export default function AboutPage() {
             </h2>
             <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md">
               <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
-                I'm a Machine Learning Engineer with a passion for developing intelligent systems that solve real-world problems. 
+                I&apos;m a Machine Learning Engineer with a passion for developing intelligent systems that solve real-world problems. 
                 My journey in AI/ML began with academic research and has evolved into building production-ready machine learning solutions.
               </p>
               <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-                When I'm not coding or training models, you can find me exploring new technologies, contributing to open-source projects, 
+                When I&apos;m not coding or training models, you can find me exploring new technologies, contributing to open-source projects, 
                 or sharing knowledge with the ML community.
               </p>
             </div>

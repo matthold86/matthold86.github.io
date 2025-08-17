@@ -8,7 +8,7 @@ export default function ContactPage() {
             Contact
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Let's connect! I'm always interested in new opportunities, collaborations, and interesting conversations.
+            Let&apos;s connect! I&apos;m always interested in new opportunities, collaborations, and interesting conversations.
           </p>
         </header>
 

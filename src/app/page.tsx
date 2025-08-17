@@ -11,8 +11,8 @@ export default function Home() {
             Machine Learning Engineer
           </p>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Welcome to my personal website! I'm passionate about building intelligent systems and solving complex problems. 
-            Explore my projects, read my thoughts, and let's connect.
+            Welcome to my personal website! I&apos;m passionate about building intelligent systems and solving complex problems. 
+            Explore my projects, read my thoughts, and let&apos;s connect.
           </p>
         </header>
 
