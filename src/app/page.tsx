@@ -155,8 +155,7 @@ export default function Home() {
             Data Scientist & Machine Learning Engineer
           </p>
           <p className="text-lg text-white max-w-2xl mx-auto drop-shadow-lg">
-            Welcome to my personal website! I&apos;m passionate about building intelligent systems and solving complex problems.
-            Explore my projects, read my thoughts, and let&apos;s connect.
+            Welcome to my personal website!
           </p>
         </div>
       </section>
