@@ -152,7 +152,7 @@ export default function Home() {
             Matthew Holden
           </h1>
           <p className="text-xl md:text-2xl text-white mb-8 drop-shadow-lg">
-            Machine Learning Engineer
+            Data Scientist & Machine Learning Engineer
           </p>
           <p className="text-lg text-white max-w-2xl mx-auto drop-shadow-lg">
             Welcome to my personal website! I&apos;m passionate about building intelligent systems and solving complex problems.

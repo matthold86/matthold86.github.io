@@ -2,6 +2,8 @@
 
 A modern personal website built with Next.js, featuring a clean design and plans for project showcases, blog posts, and an AI chatbot.
 
+🌐 **Live Website**: [matthold86.github.io](https://matthold86.github.io)
+
 ## 🚀 Tech Stack
 
 - **Framework**: Next.js 15 with App Router
