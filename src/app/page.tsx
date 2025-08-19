@@ -164,12 +164,13 @@ export default function Home() {
       <div className={`relative transition-all duration-2000 ease-out delay-500 ${
         showContent ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-8'
       }`}>
-        {/* Blue background that only covers the content width */}
-        <div className="absolute inset-0 bg-blue-500" style={{
+        {/* Subtle beige/gray background that only covers the content width */}
+        <div className="absolute inset-0" style={{
           left: '50%',
           transform: 'translateX(-50%)',
           width: 'min(100vw, 80rem)',
-          maxWidth: 'calc(100vw - 1rem)'
+          maxWidth: 'calc(100vw - 1rem)',
+          backgroundColor: 'rgba(245, 243, 240, 0.9)'
         }} />
 
         {/* Content container with proper z-index */}
@@ -178,25 +179,25 @@ export default function Home() {
           <section className="max-w-6xl mx-auto px-6 py-24">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               {/* Left: Introduction Excerpt */}
-              <div className="space-y-6">
-                <h2 className="text-4xl font-bold text-white mb-6">
-                  About Me
-                </h2>
-                <p className="text-xl text-white leading-relaxed">
-                  I&apos;m a Data Scientist & Machine Learning Engineer passionate about transforming complex data into actionable insights. With expertise in statistical analysis, predictive modeling, and deep learning, I specialize in building intelligent systems that solve real-world problems.
-                </p>
-                <p className="text-lg text-white leading-relaxed">
-                  My work spans across various domains including healthcare analytics, financial modeling, and computer vision applications. I believe in the power of data-driven decision making and love turning complex ideas into practical, scalable solutions.
-                </p>
-                <div className="pt-4">
-                  <a href="/about" className="inline-flex items-center text-white hover:text-blue-200 transition-colors font-medium">
-                    Learn More About Me
-                    <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7-7 7" />
-                    </svg>
-                  </a>
-                </div>
-              </div>
+                             <div className="space-y-6">
+                 <h2 className="text-4xl font-bold text-gray-800 mb-6">
+                   About Me
+                 </h2>
+                 <p className="text-xl text-gray-700 leading-relaxed">
+                   I&apos;m a Data Scientist & Machine Learning Engineer passionate about transforming complex data into actionable insights. With expertise in statistical analysis, predictive modeling, and deep learning, I specialize in building intelligent systems that solve real-world problems.
+                 </p>
+                 <p className="text-lg text-gray-700 leading-relaxed">
+                   My work spans across various domains including healthcare analytics, financial modeling, and computer vision applications. I believe in the power of data-driven decision making and love turning complex ideas into practical, scalable solutions.
+                 </p>
+                 <div className="pt-4">
+                   <a href="/about" className="inline-flex items-center text-blue-600 hover:text-blue-700 transition-colors font-medium">
+                     Learn More About Me
+                     <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7-7 7" />
+                     </svg>
+                   </a>
+                 </div>
+               </div>
               
               {/* Right: Circular Photo */}
               <div className="flex justify-center md:justify-end">
@@ -223,43 +224,43 @@ export default function Home() {
           {/* Skills Section */}
           <section className="max-w-6xl mx-auto px-6 py-24">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-white mb-6">
+              <h2 className="text-4xl font-bold text-gray-800 mb-6">
                 Skills & Technologies
               </h2>
-              <p className="text-xl text-white/80 max-w-3xl mx-auto">
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 A comprehensive toolkit for data science and machine learning, from statistical analysis to production deployment.
               </p>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="text-center">
-                <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-8 h-8 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 002 2z" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-3">Machine Learning</h3>
-                <p className="text-white/80">PyTorch, TensorFlow, Scikit-learn, Statistical Modeling</p>
+                <h3 className="text-xl font-semibold text-gray-800 mb-3">Machine Learning</h3>
+                <p className="text-gray-600">PyTorch, TensorFlow, Scikit-learn, Statistical Modeling</p>
               </div>
               
               <div className="text-center">
-                <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-8 h-8 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-3">Programming</h3>
-                <p className="text-white/80">Python, R, SQL, JavaScript, C++</p>
+                <h3 className="text-xl font-semibold text-gray-800 mb-3">Programming</h3>
+                <p className="text-gray-600">Python, R, SQL, JavaScript, C++</p>
               </div>
               
               <div className="text-center">
-                <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-8 h-8 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-3">Data & Cloud</h3>
-                <p className="text-white/80">AWS, Docker, Kubernetes, Big Data, MLOps</p>
+                <h3 className="text-xl font-semibold text-gray-800 mb-3">Data & Cloud</h3>
+                <p className="text-gray-600">AWS, Docker, Kubernetes, Big Data, MLOps</p>
               </div>
             </div>
           </section>
@@ -272,22 +273,22 @@ export default function Home() {
           {/* Projects Section */}
           <section className="max-w-6xl mx-auto px-6 py-24">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-white mb-6">
+              <h2 className="text-4xl font-bold text-gray-800 mb-6">
                 Featured Projects
               </h2>
-              <p className="text-xl text-white/80 max-w-3xl mx-auto">
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 A selection of my work showcasing data science applications, machine learning models, and analytical solutions.
               </p>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               <div className="group">
-                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:bg-white/10 transition-all duration-300">
-                  <h3 className="text-2xl font-semibold text-white mb-4">AI-Powered Healthcare Analytics</h3>
-                  <p className="text-white/80 mb-6 leading-relaxed">
+                <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 border border-gray-200 hover:bg-white/80 transition-all duration-300 shadow-lg">
+                  <h3 className="text-2xl font-semibold text-gray-800 mb-4">AI-Powered Healthcare Analytics</h3>
+                  <p className="text-gray-700 mb-6 leading-relaxed">
                     Developed predictive models for patient outcome analysis using electronic health records, achieving 94% accuracy in early disease detection.
                   </p>
-                  <a href="/portfolio" className="inline-flex items-center text-blue-300 hover:text-blue-200 transition-colors font-medium">
+                  <a href="/portfolio" className="inline-flex items-center text-blue-600 hover:text-blue-700 transition-colors font-medium">
                     View Project Details
                     <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7-7 7" />
@@ -297,12 +298,12 @@ export default function Home() {
               </div>
               
               <div className="group">
-                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:bg-white/10 transition-all duration-300">
-                  <h3 className="text-2xl font-semibold text-white mb-4">Computer Vision for Manufacturing</h3>
-                  <p className="text-white/80 mb-6 leading-relaxed">
+                <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 border border-gray-200 hover:bg-white/80 transition-all duration-300 shadow-lg">
+                  <h3 className="text-2xl font-semibold text-gray-800 mb-4">Computer Vision for Manufacturing</h3>
+                  <p className="text-gray-700 mb-6 leading-relaxed">
                     Built real-time quality control systems using deep learning, reducing defect rates by 78% in automated production lines.
                   </p>
-                  <a href="/portfolio" className="inline-flex items-center text-blue-300 hover:text-blue-200 transition-colors font-medium">
+                  <a href="/portfolio" className="inline-flex items-center text-blue-600 hover:text-blue-700 transition-colors font-medium">
                     View Project Details
                     <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7-7 7" />
@@ -321,39 +322,39 @@ export default function Home() {
           {/* Blog Section */}
           <section className="max-w-6xl mx-auto px-6 py-24">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-white mb-6">
+              <h2 className="text-4xl font-bold text-gray-800 mb-6">
                 Latest Insights
               </h2>
-              <p className="text-xl text-white/80 max-w-3xl mx-auto">
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 Thoughts on data science, machine learning trends, and lessons learned from building production ML systems.
               </p>
             </div>
             
             <div className="space-y-8">
-              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:bg-white/10 transition-all duration-300">
-                <h3 className="text-2xl font-semibold text-white mb-4">The Future of AI in Healthcare: Beyond the Hype</h3>
-                <p className="text-white/80 mb-4 leading-relaxed">
+              <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 border border-gray-200 hover:bg-white/80 transition-all duration-300 shadow-lg">
+                <h3 className="text-2xl font-semibold text-gray-800 mb-4">The Future of AI in Healthcare: Beyond the Hype</h3>
+                <p className="text-gray-700 mb-4 leading-relaxed">
                   Exploring practical applications of machine learning in medical diagnosis, treatment planning, and patient care management.
                 </p>
                 <div className="flex items-center justify-between">
-                  <span className="text-white/60 text-sm">Data Science • Healthcare • 5 min read</span>
-                  <a href="/blog" className="text-blue-300 hover:text-blue-200 transition-colors font-medium">
+                  <span className="text-gray-500 text-sm">Data Science • Healthcare • 5 min read</span>
+                  <a href="/blog" className="text-blue-600 hover:text-blue-700 transition-colors font-medium">
                     Read Article →
                   </a>
                 </div>
               </div>
               
-              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:bg-white/10 transition-all duration-300">
-                <h3 className="text-2xl font-semibold text-white mb-4">Building Scalable ML Infrastructure: Lessons from Production</h3>
-                <p className="text-white/80 mb-4 leading-relaxed">
-                  Key insights and best practices for deploying machine learning models at scale in enterprise environments.
-                </p>
-                <div className="flex items-center justify-between">
-                  <span className="text-white/60 text-sm">MLOps • Infrastructure • 8 min read</span>
-                  <a href="/blog" className="text-blue-300 hover:text-blue-200 transition-colors font-medium">
-                    Read Article →
-                  </a>
-                </div>
+              <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 border border-gray-200 hover:bg-white/80 transition-all duration-300 shadow-lg">
+                <h3 className="text-2xl font-semibold text-gray-800 mb-4">Building Scalable ML Infrastructure: Lessons from Production</h3>
+                                  <p className="text-gray-700 mb-4 leading-relaxed">
+                    Key insights and best practices for deploying machine learning models at scale in enterprise environments.
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-500 text-sm">MLOps • Infrastructure • 8 min read</span>
+                    <a href="/blog" className="text-blue-600 hover:text-blue-700 transition-colors font-medium">
+                      Read Article →
+                    </a>
+                  </div>
               </div>
             </div>
           </section>
@@ -366,18 +367,18 @@ export default function Home() {
           {/* Contact Section */}
           <section className="max-w-6xl mx-auto px-6 py-24">
             <div className="text-center">
-              <h2 className="text-4xl font-bold text-white mb-6">
+              <h2 className="text-4xl font-bold text-gray-800 mb-6">
                 Let&apos;s Connect
               </h2>
-              <p className="text-xl text-white/80 max-w-3xl mx-auto mb-12">
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-12">
                 Interested in collaborating on a data science project? Want to discuss machine learning opportunities? 
                 I&apos;d love to hear from you and explore how we can work together.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="/contact" className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                <a href="/contact" className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors shadow-lg">
                   Get In Touch
                 </a>
-                <a href="https://github.com/matthold86" target="_blank" rel="noopener noreferrer" className="bg-white/10 text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/20 transition-colors border border-white/20">
+                <a href="https://github.com/matthold86" target="_blank" rel="noopener noreferrer" className="bg-gray-200 text-gray-800 px-8 py-4 rounded-lg font-semibold hover:bg-gray-300 transition-colors border border-gray-300 shadow-lg">
                   View GitHub
                 </a>
               </div>
@@ -387,8 +388,8 @@ export default function Home() {
           {/* Footer */}
           <footer className="max-w-6xl mx-auto px-6 py-16">
             <div className="text-center">
-              <div className="border-t border-white/20 pt-8">
-                <p className="text-white/60">&copy; 2024 Matthew Holden. All rights reserved.</p>
+              <div className="border-t border-gray-300 pt-8">
+                <p className="text-gray-500">&copy; 2024 Matthew Holden. All rights reserved.</p>
               </div>
             </div>
           </footer>
