@@ -174,111 +174,222 @@ export default function Home() {
 
         {/* Content container with proper z-index */}
         <div className="relative z-10">
-          {/* About Me Section */}
-          <section className="max-w-5xl mx-auto px-6 py-20">
-            <div className="bg-yellow-400 rounded-2xl shadow-lg p-12">
-              <h2 className="text-3xl font-bold text-black mb-8 text-center">
-                About Me
-              </h2>
-              <p className="text-lg text-black mb-6 leading-relaxed">
-                I&apos;m a Machine Learning Engineer with a passion for building intelligent systems that solve real-world problems. 
-                With expertise in deep learning, computer vision, and natural language processing, I love turning complex ideas into 
-                practical solutions.
-              </p>
-              <p className="text-lg text-black leading-relaxed">
-                When I&apos;m not coding or training models, you&apos;ll find me exploring new technologies, contributing to open-source 
-                projects, or sharing knowledge with the ML community.
-              </p>
+          {/* Introduction Section */}
+          <section className="max-w-6xl mx-auto px-6 py-24">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              {/* Left: Introduction Excerpt */}
+              <div className="space-y-6">
+                <h2 className="text-4xl font-bold text-white mb-6">
+                  About Me
+                </h2>
+                <p className="text-xl text-white leading-relaxed">
+                  I&apos;m a Data Scientist & Machine Learning Engineer passionate about transforming complex data into actionable insights. With expertise in statistical analysis, predictive modeling, and deep learning, I specialize in building intelligent systems that solve real-world problems.
+                </p>
+                <p className="text-lg text-white leading-relaxed">
+                  My work spans across various domains including healthcare analytics, financial modeling, and computer vision applications. I believe in the power of data-driven decision making and love turning complex ideas into practical, scalable solutions.
+                </p>
+                <div className="pt-4">
+                  <a href="/about" className="inline-flex items-center text-white hover:text-blue-200 transition-colors font-medium">
+                    Learn More About Me
+                    <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7-7 7" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+              
+              {/* Right: Circular Photo */}
+              <div className="flex justify-center md:justify-end">
+                <div className="relative">
+                  <div className="w-80 h-80 rounded-full overflow-hidden border-4 border-white/20 shadow-2xl">
+                    <img
+                      src="/personal_photo.png"
+                      alt="Matthew Holden"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  {/* Subtle glow effect */}
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/10 to-transparent pointer-events-none"></div>
+                </div>
+              </div>
             </div>
           </section>
+
+          {/* Subtle separator line */}
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="border-t border-white/20"></div>
+          </div>
 
           {/* Skills Section */}
-          <section className="max-w-5xl mx-auto px-6 py-20">
-            <div className="bg-green-400 rounded-2xl shadow-lg p-12">
-              <h2 className="text-3xl font-bold text-black mb-8 text-center">
+          <section className="max-w-6xl mx-auto px-6 py-24">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-white mb-6">
                 Skills & Technologies
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div className="bg-white rounded-lg p-4 text-center">
-                  <h3 className="font-semibold text-black mb-2">Machine Learning</h3>
-                  <p className="text-gray-700">PyTorch, TensorFlow, Scikit-learn</p>
+              <p className="text-xl text-white/80 max-w-3xl mx-auto">
+                A comprehensive toolkit for data science and machine learning, from statistical analysis to production deployment.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
                 </div>
-                <div className="bg-white rounded-lg p-4 text-center">
-                  <h3 className="font-semibold text-black mb-2">Programming</h3>
-                  <p className="text-gray-700">Python, JavaScript, C++</p>
+                <h3 className="text-xl font-semibold text-white mb-3">Machine Learning</h3>
+                <p className="text-white/80">PyTorch, TensorFlow, Scikit-learn, Statistical Modeling</p>
+              </div>
+              
+              <div className="text-center">
+                <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                  </svg>
                 </div>
-                <div className="bg-white rounded-lg p-4 text-center">
-                  <h3 className="font-semibold text-black mb-2">Cloud & DevOps</h3>
-                  <p className="text-gray-700">AWS, Docker, Kubernetes</p>
+                <h3 className="text-xl font-semibold text-white mb-3">Programming</h3>
+                <p className="text-white/80">Python, R, SQL, JavaScript, C++</p>
+              </div>
+              
+              <div className="text-center">
+                <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
                 </div>
+                <h3 className="text-xl font-semibold text-white mb-3">Data & Cloud</h3>
+                <p className="text-white/80">AWS, Docker, Kubernetes, Big Data, MLOps</p>
               </div>
             </div>
           </section>
+
+          {/* Subtle separator line */}
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="border-t border-white/20"></div>
+          </div>
 
           {/* Projects Section */}
-          <section className="max-w-5xl mx-auto px-6 py-20">
-            <div className="bg-purple-400 rounded-2xl shadow-lg p-12">
-              <h2 className="text-3xl font-bold text-black mb-8 text-center">
+          <section className="max-w-6xl mx-auto px-6 py-24">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-white mb-6">
                 Featured Projects
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="bg-white rounded-lg p-6">
-                  <h3 className="text-xl font-semibold text-black mb-3">AI Chatbot</h3>
-                  <p className="text-gray-700 mb-4">A conversational AI trained on my personal experience and knowledge.</p>
-                  <a href="/portfolio" className="text-purple-600 hover:text-purple-800 font-medium">Learn More →</a>
+              <p className="text-xl text-white/80 max-w-3xl mx-auto">
+                A selection of my work showcasing data science applications, machine learning models, and analytical solutions.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              <div className="group">
+                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:bg-white/10 transition-all duration-300">
+                  <h3 className="text-2xl font-semibold text-white mb-4">AI-Powered Healthcare Analytics</h3>
+                  <p className="text-white/80 mb-6 leading-relaxed">
+                    Developed predictive models for patient outcome analysis using electronic health records, achieving 94% accuracy in early disease detection.
+                  </p>
+                  <a href="/portfolio" className="inline-flex items-center text-blue-300 hover:text-blue-200 transition-colors font-medium">
+                    View Project Details
+                    <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7-7 7" />
+                    </svg>
+                  </a>
                 </div>
-                <div className="bg-white rounded-lg p-6">
-                  <h3 className="text-xl font-semibold text-black mb-3">Computer Vision Model</h3>
-                  <p className="text-gray-700 mb-4">Advanced image recognition system for industrial applications.</p>
-                  <a href="/portfolio" className="text-purple-600 hover:text-purple-800 font-medium">Learn More →</a>
+              </div>
+              
+              <div className="group">
+                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:bg-white/10 transition-all duration-300">
+                  <h3 className="text-2xl font-semibold text-white mb-4">Computer Vision for Manufacturing</h3>
+                  <p className="text-white/80 mb-6 leading-relaxed">
+                    Built real-time quality control systems using deep learning, reducing defect rates by 78% in automated production lines.
+                  </p>
+                  <a href="/portfolio" className="inline-flex items-center text-blue-300 hover:text-blue-200 transition-colors font-medium">
+                    View Project Details
+                    <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7-7 7" />
+                    </svg>
+                  </a>
                 </div>
               </div>
             </div>
           </section>
+
+          {/* Subtle separator line */}
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="border-t border-white/20"></div>
+          </div>
 
           {/* Blog Section */}
-          <section className="max-w-5xl mx-auto px-6 py-20">
-            <div className="bg-orange-400 rounded-2xl shadow-lg p-12">
-              <h2 className="text-3xl font-bold text-black mb-8 text-center">
-                Latest Articles
+          <section className="max-w-6xl mx-auto px-6 py-24">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-white mb-6">
+                Latest Insights
               </h2>
-              <div className="space-y-6">
-                <div className="bg-white rounded-lg p-6">
-                  <h3 className="text-xl font-semibold text-black mb-2">The Future of AI in Healthcare</h3>
-                  <p className="text-gray-700 mb-3">Exploring how machine learning is revolutionizing medical diagnosis and treatment.</p>
-                  <a href="/blog" className="text-orange-600 hover:text-orange-800 font-medium">Read More →</a>
+              <p className="text-xl text-white/80 max-w-3xl mx-auto">
+                Thoughts on data science, machine learning trends, and lessons learned from building production ML systems.
+              </p>
+            </div>
+            
+            <div className="space-y-8">
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:bg-white/10 transition-all duration-300">
+                <h3 className="text-2xl font-semibold text-white mb-4">The Future of AI in Healthcare: Beyond the Hype</h3>
+                <p className="text-white/80 mb-4 leading-relaxed">
+                  Exploring practical applications of machine learning in medical diagnosis, treatment planning, and patient care management.
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-white/60 text-sm">Data Science • Healthcare • 5 min read</span>
+                  <a href="/blog" className="text-blue-300 hover:text-blue-200 transition-colors font-medium">
+                    Read Article →
+                  </a>
                 </div>
-                <div className="bg-white rounded-lg p-6">
-                  <h3 className="text-xl font-semibold text-black mb-2">Building Scalable ML Systems</h3>
-                  <p className="text-gray-700 mb-3">Lessons learned from deploying machine learning models in production.</p>
-                  <a href="/blog" className="text-orange-600 hover:text-orange-800 font-medium">Read More →</a>
+              </div>
+              
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:bg-white/10 transition-all duration-300">
+                <h3 className="text-2xl font-semibold text-white mb-4">Building Scalable ML Infrastructure: Lessons from Production</h3>
+                <p className="text-white/80 mb-4 leading-relaxed">
+                  Key insights and best practices for deploying machine learning models at scale in enterprise environments.
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-white/60 text-sm">MLOps • Infrastructure • 8 min read</span>
+                  <a href="/blog" className="text-blue-300 hover:text-blue-200 transition-colors font-medium">
+                    Read Article →
+                  </a>
                 </div>
               </div>
             </div>
           </section>
 
+          {/* Subtle separator line */}
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="border-t border-white/20"></div>
+          </div>
+
           {/* Contact Section */}
-          <section className="max-w-5xl mx-auto px-6 py-20">
-            <div className="bg-red-400 rounded-2xl shadow-lg p-12">
-              <h2 className="text-3xl font-bold text-black mb-8 text-center">
-                Get In Touch
+          <section className="max-w-6xl mx-auto px-6 py-24">
+            <div className="text-center">
+              <h2 className="text-4xl font-bold text-white mb-6">
+                Let&apos;s Connect
               </h2>
-              <p className="text-lg text-black mb-8 text-center">
-                Interested in collaborating on a project? Want to discuss AI and machine learning? 
-                I&apos;d love to hear from you!
+              <p className="text-xl text-white/80 max-w-3xl mx-auto mb-12">
+                Interested in collaborating on a data science project? Want to discuss machine learning opportunities? 
+                I&apos;d love to hear from you and explore how we can work together.
               </p>
-              <div className="text-center">
-                <a href="/contact" className="bg-white text-red-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-                  Contact Me
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="/contact" className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                  Get In Touch
+                </a>
+                <a href="https://github.com/matthold86" target="_blank" rel="noopener noreferrer" className="bg-white/10 text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/20 transition-colors border border-white/20">
+                  View GitHub
                 </a>
               </div>
             </div>
           </section>
 
           {/* Footer */}
-          <footer className="max-w-5xl mx-auto px-6 py-12">
-            <div className="text-center text-white">
-              <p>&copy; 2024 Matthew Holden. All rights reserved.</p>
+          <footer className="max-w-6xl mx-auto px-6 py-16">
+            <div className="text-center">
+              <div className="border-t border-white/20 pt-8">
+                <p className="text-white/60">&copy; 2024 Matthew Holden. All rights reserved.</p>
+              </div>
             </div>
           </footer>
         </div>
