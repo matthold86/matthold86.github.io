@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Navigation from '@/components/layout/Navigation';
 
 // Function to wake up the chatbot
 const wakeUpChatbot = async () => {
@@ -119,7 +118,6 @@ export default function Home() {
   return (
     <div className="min-h-screen relative">
       {/* Navigation Bar - Fades in with content */}
-      <Navigation showContent={showContent} />
       
       {/* Dynamic Background Image - Blur changes with scroll */}
       <div
