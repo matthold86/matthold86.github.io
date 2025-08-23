@@ -3,6 +3,26 @@
 import { useState, useEffect } from 'react';
 import Navigation from '@/components/layout/Navigation';
 
+// Function to wake up the chatbot
+const wakeUpChatbot = async () => {
+  try {
+    console.log('Waking up chatbot...');
+    const response = await fetch('https://personal-website-chatbot.fly.dev/healthz', {
+      method: 'GET',
+      mode: 'cors',
+    });
+    
+    if (response.ok) {
+      console.log('Chatbot health check successful - machine is waking up');
+    } else {
+      console.warn('Chatbot health check failed:', response.status);
+    }
+  } catch (error) {
+    console.warn('Failed to wake up chatbot:', error);
+    // Don't throw error - this is just a wake-up call, not critical for the website
+  }
+};
+
 export default function Home() {
   const [blurAmount, setBlurAmount] = useState(0);
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -11,6 +31,9 @@ export default function Home() {
   const [showBackground, setShowBackground] = useState(false);
 
   useEffect(() => {
+    // Wake up the chatbot when the component mounts
+    wakeUpChatbot();
+
     // Force image loading on component mount
     const img = new Image();
     img.onload = () => {
