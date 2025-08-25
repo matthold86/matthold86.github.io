@@ -4,14 +4,14 @@ import Chatbot from '@/components/Chatbot';
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 pt-20">
+    <div className="min-h-screen pt-20">
       <div className="container mx-auto px-4 py-16">
         {/* Header */}
         <header className="text-center mb-16">
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 drop-shadow-lg">
             About Me
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-200 max-w-3xl mx-auto drop-shadow-lg">
             Machine Learning Engineer passionate about building intelligent systems and solving complex problems
           </p>
         </header>
@@ -20,11 +20,11 @@ export default function AboutPage() {
         <main className="max-w-4xl mx-auto">
           {/* Bio Section - Shortened */}
           <section className="mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
+            <h2 className="text-3xl font-bold text-white mb-6 drop-shadow-lg">
               Background
             </h2>
-            <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md">
-              <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+            <div className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm p-8 rounded-lg shadow-md">
+              <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
                 I&apos;m a Machine Learning Engineer with a passion for developing intelligent systems that solve real-world problems. 
                 My journey in AI/ML began with academic research and has evolved into building production-ready machine learning solutions.
               </p>
@@ -38,7 +38,7 @@ export default function AboutPage() {
 
           {/* Chatbot Section */}
           <section className="mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
+            <h2 className="text-3xl font-bold text-white mb-6 drop-shadow-lg">
               Chat with Me
             </h2>
             <Chatbot />
@@ -46,11 +46,11 @@ export default function AboutPage() {
 
           {/* Skills Section */}
           <section className="mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
+            <h2 className="text-3xl font-bold text-white mb-6 drop-shadow-lg">
               Skills & Expertise
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+              <div className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm p-6 rounded-lg shadow-md">
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Machine Learning</h3>
                 <ul className="space-y-2 text-gray-600 dark:text-gray-300">
                   <li>• Deep Learning & Neural Networks </li>
@@ -59,7 +59,7 @@ export default function AboutPage() {
                   <li>• Model Deployment & MLOps </li>
                 </ul>
               </div>
-              <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+              <div className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm p-6 rounded-lg shadow-md">
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Technologies</h3>
                 <ul className="space-y-2 text-gray-600 dark:text-gray-300">
                   <li>• Python, TensorFlow, PyTorch</li>
@@ -73,10 +73,10 @@ export default function AboutPage() {
 
           {/* Experience Section */}
           <section className="mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
+            <h2 className="text-3xl font-bold text-white mb-6 drop-shadow-lg">
               Experience
             </h2>
-            <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md">
+            <div className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm p-8 rounded-lg shadow-md">
               <div className="space-y-6">
                 <div className="border-l-4 border-blue-500 pl-6">
                   <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Machine Learning Engineer</h3>

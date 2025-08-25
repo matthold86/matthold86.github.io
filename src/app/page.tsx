@@ -25,8 +25,6 @@ const wakeUpChatbot = async () => {
 
 export default function Home() {
   const [blurAmount, setBlurAmount] = useState(0);
-  const [imageLoaded, setImageLoaded] = useState(false);
-  const [imageError, setImageError] = useState(false);
   const [showContent, setShowContent] = useState(false);
   const [showBackground, setShowBackground] = useState(false);
 
@@ -34,45 +32,10 @@ export default function Home() {
     // Wake up the chatbot when the component mounts
     wakeUpChatbot();
 
-    // Force image loading on component mount
-    const img = new window.Image();
-    img.onload = () => {
-      console.log('Image loaded via Image constructor!');
-      setImageLoaded(true);
-    };
-    img.onerror = () => {
-      console.error('Image failed to load via Image constructor');
-      setImageError(true);
-    };
-    img.src = '/home_background.jpg';
-
-    // Fallback: if image doesn't load within 3 seconds, show it anyway
-    const fallbackTimer = setTimeout(() => {
-      if (!imageLoaded && !imageError) {
-        console.log('Fallback: showing image after timeout');
-        setImageLoaded(true);
-      }
-    }, 3000);
-
-    return () => {
-      clearTimeout(fallbackTimer);
-    };
-  }, [imageLoaded, imageError]);
-
-  useEffect(() => {
-    // Staged loading sequence
-    if (imageLoaded) {
-      // First show content
-      setTimeout(() => {
-        setShowContent(true);
-      }, 500);
-
-      // Then show background after content is visible
-      setTimeout(() => {
-        setShowBackground(true);
-      }, 1500);
-    }
-  }, [imageLoaded]);
+    // Show content immediately since background is already loaded
+    setShowContent(true);
+    setShowBackground(true);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -106,15 +69,10 @@ export default function Home() {
     };
   }, []);
 
-  const handleImageLoad = () => {
-    console.log('Image loaded successfully via onLoad!');
-    setImageLoaded(true);
-  };
-
   // Debug: Log current state
   useEffect(() => {
-    console.log('Current states - imageLoaded:', imageLoaded, 'showContent:', showContent, 'showBackground:', showBackground);
-  }, [imageLoaded, showContent, showBackground]);
+    console.log('Current states - showContent:', showContent, 'showBackground:', showBackground);
+  }, [showContent, showBackground]);
 
   return (
     <div className="min-h-screen relative">
@@ -122,12 +80,9 @@ export default function Home() {
       
       {/* Dynamic Background Image - Blur changes with scroll */}
       <div
-        className="fixed inset-0 bg-cover bg-center bg-no-repeat -z-10 transition-all duration-2000 ease-out"
+        className="fixed inset-0 -z-10 transition-all duration-2000 ease-out"
         style={{
-          backgroundImage: 'url(/home_background.jpg)',
           filter: `blur(${blurAmount}px)`,
-          backgroundSize: 'cover',
-          backgroundColor: '#1f2937'
         }}
       />
 
@@ -140,9 +95,9 @@ export default function Home() {
         }}
       />
 
-      {/* Subtle color overlay that&apos;s always present */}
+      {/* Subtle color overlay that's always present */}
       <div 
-        className="fixed inset-0 -z-5"
+        className="fixed inset-0 -z-5 transition-opacity duration-2000 ease-out"
         style={{
           background: 'rgba(31, 41, 55, 0.1)',
           opacity: showBackground ? '1' : '0'
@@ -419,17 +374,6 @@ export default function Home() {
           </footer>
         </div>
       </div>
-
-      {/* Hidden image element to trigger onLoad */}
-      <Image
-        src="/home_background.jpg"
-        alt=""
-        width={1}
-        height={1}
-        className="hidden"
-        onLoad={handleImageLoad}
-        onError={() => console.error('Image failed to load via img element')}
-      />
     </div>
   );
 }
