@@ -35,13 +35,13 @@ export default function Home() {
     wakeUpChatbot();
 
     // Force image loading on component mount
-    const img = new (window as any).Image();
+    const img = new window.Image();
     img.onload = () => {
       console.log('Image loaded via Image constructor!');
       setImageLoaded(true);
     };
-    img.onerror = (e: any) => {
-      console.error('Image failed to load via Image constructor:', e);
+    img.onerror = () => {
+      console.error('Image failed to load via Image constructor');
       setImageError(true);
     };
     img.src = '/home_background.jpg';
@@ -428,7 +428,7 @@ export default function Home() {
         height={1}
         className="hidden"
         onLoad={handleImageLoad}
-        onError={(e: any) => console.error('Image failed to load via img element:', e)}
+        onError={() => console.error('Image failed to load via img element')}
       />
     </div>
   );

@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "type-check": "tsc --noEmit",
+    "prebuild": "npm run lint && npm run type-check",
     "deploy": "npm run build && touch out/.nojekyll"
   },
   "dependencies": {
