@@ -1,13 +1,68 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import Chatbot from '@/components/Chatbot';
 
 export default function AboutPage() {
+  const [blurAmount, setBlurAmount] = useState(0);
+  const [showContent, setShowContent] = useState(false);
+
+  useEffect(() => {
+    // Show content with a slight delay for smooth entrance
+    const timer = setTimeout(() => {
+      setShowContent(true);
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const maxBlur = 8;
+      const blurRange = windowHeight;
+
+      if (scrollY <= blurRange) {
+        const blur = (scrollY / blurRange) * maxBlur;
+        setBlurAmount(blur);
+      } else {
+        setBlurAmount(maxBlur);
+      }
+    };
+
+    let ticking = false;
+    const throttledHandleScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', throttledHandleScroll);
+    return () => {
+      window.removeEventListener('scroll', throttledHandleScroll);
+    };
+  }, []);
+
   return (
     <div className="min-h-screen pt-20">
+      {/* Dynamic Background Effects - Only scroll-based blur, other effects are in layout */}
+      <div
+        className="fixed inset-0 -z-10 transition-all duration-2000 ease-out"
+        style={{
+          filter: `blur(${blurAmount}px)`,
+        }}
+      />
+
       <div className="container mx-auto px-4 py-16">
         {/* Header */}
-        <header className="text-center mb-16">
+        <header className={`text-center mb-16 transition-all duration-700 ease-out delay-100 ${
+          showContent ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-8'
+        }`}>
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 drop-shadow-lg">
             About Me
           </h1>
@@ -19,7 +74,9 @@ export default function AboutPage() {
         {/* Main Content */}
         <main className="max-w-4xl mx-auto">
           {/* Bio Section - Shortened */}
-          <section className="mb-16">
+          <section className={`mb-16 transition-all duration-700 ease-out delay-200 ${
+            showContent ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-8'
+          }`}>
             <h2 className="text-3xl font-bold text-white mb-6 drop-shadow-lg">
               Background
             </h2>
@@ -37,7 +94,9 @@ export default function AboutPage() {
           </section>
 
           {/* Chatbot Section */}
-          <section className="mb-16">
+          <section className={`mb-16 transition-all duration-700 ease-out delay-300 ${
+            showContent ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-8'
+          }`}>
             <h2 className="text-3xl font-bold text-white mb-6 drop-shadow-lg">
               Chat with Me
             </h2>
@@ -45,7 +104,9 @@ export default function AboutPage() {
           </section>
 
           {/* Skills Section */}
-          <section className="mb-16">
+          <section className={`mb-16 transition-all duration-700 ease-out delay-400 ${
+            showContent ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-8'
+          }`}>
             <h2 className="text-3xl font-bold text-white mb-6 drop-shadow-lg">
               Skills & Expertise
             </h2>
@@ -72,7 +133,9 @@ export default function AboutPage() {
           </section>
 
           {/* Experience Section */}
-          <section className="mb-16">
+          <section className={`mb-16 transition-all duration-700 ease-out delay-500 ${
+            showContent ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-8'
+          }`}>
             <h2 className="text-3xl font-bold text-white mb-6 drop-shadow-lg">
               Experience
             </h2>

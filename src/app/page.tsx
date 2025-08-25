@@ -26,15 +26,23 @@ const wakeUpChatbot = async () => {
 export default function Home() {
   const [blurAmount, setBlurAmount] = useState(0);
   const [showContent, setShowContent] = useState(false);
-  const [showBackground, setShowBackground] = useState(false);
 
   useEffect(() => {
     // Wake up the chatbot when the component mounts
     wakeUpChatbot();
 
-    // Show content immediately since background is already loaded
-    setShowContent(true);
-    setShowBackground(true);
+    // Check if this is the initial load
+    const hasVisitedBefore = sessionStorage.getItem('hasVisitedBefore');
+    
+    if (!hasVisitedBefore) {
+      // First time: start showing content while background is fading
+      setTimeout(() => {
+        setShowContent(true);
+      }, 1000); // Start showing content after 1s (while fade is still happening)
+    } else {
+      // Subsequent visits: show content immediately
+      setShowContent(true);
+    }
   }, []);
 
   useEffect(() => {
@@ -69,15 +77,8 @@ export default function Home() {
     };
   }, []);
 
-  // Debug: Log current state
-  useEffect(() => {
-    console.log('Current states - showContent:', showContent, 'showBackground:', showBackground);
-  }, [showContent, showBackground]);
-
   return (
     <div className="min-h-screen relative">
-      {/* Navigation Bar - Fades in with content */}
-      
       {/* Dynamic Background Image - Blur changes with scroll */}
       <div
         className="fixed inset-0 -z-10 transition-all duration-2000 ease-out"
@@ -86,41 +87,7 @@ export default function Home() {
         }}
       />
 
-      {/* Color-matching overlay to bridge the gap */}
-      <div 
-        className="fixed inset-0 -z-5 transition-opacity duration-2000 ease-out"
-        style={{
-          background: 'linear-gradient(45deg, rgba(31, 41, 55, 0.3), rgba(31, 41, 55, 0.1))',
-          opacity: showBackground ? '0.3' : '0'
-        }}
-      />
-
-      {/* Subtle color overlay that's always present */}
-      <div 
-        className="fixed inset-0 -z-5 transition-opacity duration-2000 ease-out"
-        style={{
-          background: 'rgba(31, 41, 55, 0.1)',
-          opacity: showBackground ? '1' : '0'
-        }}
-      />
-
-      {/* Subtle vignette effect around edges */}
-      <div 
-        className="fixed inset-0 -z-5 transition-opacity duration-2000 ease-out"
-        style={{
-          background: 'radial-gradient(circle at center, transparent 30%, rgba(31, 41, 55, 0.4) 70%, rgba(31, 41, 55, 0.8) 100%)',
-          opacity: showBackground ? '1' : '0'
-        }}
-      />
-
-      {/* Black overlay that fades out when background shows */}
-      <div 
-        className={`fixed inset-0 bg-black transition-opacity duration-2000 ease-out -z-1 ${
-          showBackground ? 'opacity-0' : 'opacity-100'
-        }`}
-      />
-
-      {/* Hero Section - Fades in first */}
+      {/* Hero Section */}
       <section className={`min-h-screen flex items-center justify-center px-6 transition-all duration-2000 ease-out ${
         showContent ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-8'
       }`}>
@@ -138,7 +105,7 @@ export default function Home() {
       </section>
 
       {/* Content Sections - Blue background, starts after hero */}
-      <div className={`relative transition-all duration-2000 ease-out delay-500 ${
+      <div className={`relative transition-all duration-2000 ease-out delay-1000 ${
         showContent ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-8'
       }`}>
         {/* Subtle beige/gray background that only covers the content width */}
