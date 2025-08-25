@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 // Function to wake up the chatbot
 const wakeUpChatbot = async () => {
@@ -34,12 +35,12 @@ export default function Home() {
     wakeUpChatbot();
 
     // Force image loading on component mount
-    const img = new Image();
+    const img = new (window as any).Image();
     img.onload = () => {
       console.log('Image loaded via Image constructor!');
       setImageLoaded(true);
     };
-    img.onerror = (e) => {
+    img.onerror = (e: any) => {
       console.error('Image failed to load via Image constructor:', e);
       setImageError(true);
     };
@@ -56,7 +57,7 @@ export default function Home() {
     return () => {
       clearTimeout(fallbackTimer);
     };
-  }, []);
+  }, [imageLoaded, imageError]);
 
   useEffect(() => {
     // Staged loading sequence
@@ -139,7 +140,7 @@ export default function Home() {
         }}
       />
 
-      {/* Subtle color overlay that's always present */}
+      {/* Subtle color overlay that&apos;s always present */}
       <div 
         className="fixed inset-0 -z-5"
         style={{
@@ -224,9 +225,11 @@ export default function Home() {
               <div className="flex justify-center md:justify-end">
                 <div className="relative">
                   <div className="w-80 h-80 rounded-full overflow-hidden border-4 border-white/20 shadow-2xl">
-                    <img
+                    <Image
                       src="/personal_photo.png"
                       alt="Matthew Holden"
+                      width={320}
+                      height={320}
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -418,12 +421,14 @@ export default function Home() {
       </div>
 
       {/* Hidden image element to trigger onLoad */}
-      <img
+      <Image
         src="/home_background.jpg"
         alt=""
+        width={1}
+        height={1}
         className="hidden"
         onLoad={handleImageLoad}
-        onError={(e) => console.error('Image failed to load via img element:', e)}
+        onError={(e: any) => console.error('Image failed to load via img element:', e)}
       />
     </div>
   );

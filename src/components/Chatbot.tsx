@@ -95,7 +95,7 @@ export default function Chatbot({ className = '' }: ChatbotProps) {
             const data = JSON.parse(responseText);
             console.log('✅ Parsed JSON response:', data);
             
-            const assistantMessage = data.response || data.message || data.content || 'Sorry, I couldn\'t process that request.';
+            const assistantMessage = data.response || data.message || data.content || 'Sorry, I couldn&apos;t process that request.';
             console.log('💬 Assistant message to display:', assistantMessage);
             
             setMessages(prev => [...prev, { role: 'assistant', content: assistantMessage }]);
@@ -104,7 +104,7 @@ export default function Chatbot({ className = '' }: ChatbotProps) {
             console.log('📄 Raw response that failed to parse:', responseText);
             setMessages(prev => [...prev, { 
               role: 'assistant', 
-              content: `Received response but couldn't parse it. Raw response: ${responseText.substring(0, 200)}...` 
+              content: `Received response but couldn&apos;t parse it. Raw response: ${responseText.substring(0, 200)}...` 
             }]);
           }
         }
@@ -126,7 +126,7 @@ export default function Chatbot({ className = '' }: ChatbotProps) {
       console.error('Error message:', error instanceof Error ? error.message : String(error));
       console.error('Error stack:', error instanceof Error ? error.stack : 'No stack trace available');
       
-      let errorMessage = 'Sorry, I\'m having trouble connecting right now.';
+      let errorMessage = 'Sorry, I&apos;m having trouble connecting right now.';
       
       if (error instanceof TypeError && error.message.includes('fetch')) {
         errorMessage = 'Network error: Unable to reach the chatbot server. Please check your internet connection.';
@@ -161,8 +161,8 @@ export default function Chatbot({ className = '' }: ChatbotProps) {
       >
         {messages.length === 0 && (
           <div className="text-center text-gray-500 dark:text-gray-400 py-8">
-            <p className="text-lg">👋 Hi! I'm Matthew's AI assistant.</p>
-            <p className="text-sm mt-2">Ask me anything about Matthew's background, skills, or experience!</p>
+            <p className="text-lg">👋 Hi! I&apos;m Matthew&apos;s AI assistant.</p>
+            <p className="text-sm mt-2">Ask me anything about Matthew&apos;s background, skills, or experience!</p>
           </div>
         )}
         
